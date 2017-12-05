@@ -1,0 +1,34 @@
+#!/usr/bin/lua5.1
+
+element = 2
+n = 0
+
+while ( ( 2 * n + 1  )^2 < element)
+do
+	n = n+1
+end
+
+side = 2 * n 
+
+offset = element - ( n * 2 - 1 )^2 - 1
+if offset > side
+then 
+	offset2 = offset % side  -1
+else 
+	offset2 = offset 
+end
+
+if offset2 <= n 
+then
+	x = offset2
+else
+	x = n - offset2  
+end
+
+distance = n + n - 1 - x  
+
+
+io.write( side  , "side\n")
+io.write( offset , "offset\n")
+io.write( offset2 , "offset\n")
+io.write( distance , "distance\n")
